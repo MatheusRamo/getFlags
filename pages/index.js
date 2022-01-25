@@ -21,10 +21,10 @@ Home.getInitialProps = async ()=>{
 
     const countries = data.map(country => {
         const { translations, population, flags } = country
-        const number = new Intl.NumberFormat('pt-BR').format(population)
+        
         return {
             name: translations.por.common,
-            population: number,
+            population: new Intl.NumberFormat('pt-BR').format(population),
             flag: flags.svg
         }
     }).sort((a,b)=>{
